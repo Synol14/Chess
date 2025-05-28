@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 # Define settings for the project
-set(PROJECT_NAME ProjectName) # Change this to your project name
+set(PROJECT_NAME Chess)       # Change this to your project name
 set(PROJECT_VERSION 1.0)      # Change this to the version of your project
 set(EXECUTABLE_EXTENTION )    # Change this to the extension of the executable file (e.g. .exe for Windows)
 set(INCLUDE_DIR include)      # Change this to the directory where your header files are located
