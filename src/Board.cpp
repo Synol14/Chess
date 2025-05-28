@@ -1,4 +1,5 @@
 #include "Board.hpp"
+#include "Pieces/Pieces.hpp"
 #include "ANSI.h"
 
 Board::Board() {
@@ -22,6 +23,31 @@ Piece * Board::getPiece(int x, int y)
 /* Methods */
 void Board::init()
 {
+    // Pawns placements
+    for (int x = 0; x < 8; x++)
+    {
+        this->pieces[x][1] = new Pawn(BLACK, this);
+        this->pieces[x][6] = new Pawn(WHITE, this);
+        if (x == 0 || x == 7)
+        {
+            this->pieces[x][0] = new Rook(BLACK, this);
+            this->pieces[x][7] = new Rook(WHITE, this);
+        }
+        if (x == 1 || x == 6)
+        {
+            this->pieces[x][0] = new Knight(BLACK, this);
+            this->pieces[x][7] = new Knight(WHITE, this);
+        }
+        if (x == 2 || x == 5)
+        {
+            this->pieces[x][0] = new Bishop(BLACK, this);
+            this->pieces[x][7] = new Bishop(WHITE, this);
+        }
+    }
+    this->pieces[3][0] = new Queen(BLACK, this);
+    this->pieces[3][7] = new Queen(WHITE, this);
+    this->pieces[4][0] = new King(BLACK, this);
+    this->pieces[4][7] = new King(WHITE, this);
 }
 
 std::string Board::toString()
