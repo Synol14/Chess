@@ -52,7 +52,7 @@ void Board::init()
 
 std::string Board::toString()
 {
-    std::string output = "        A     B     C     D     E     F     G     H\n\n";
+    std::string output = "\n        A     B     C     D     E     F     G     H\n\n";
 
     for (int y = 0; y < 8; y++)
     {
